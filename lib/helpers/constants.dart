@@ -1,0 +1,7 @@
+// Variables
+
+const String CACHE_USER = "userKey";
+
+const String CACHE_RECENTLY_VIEWED = "RECENTLY_VIEWED_KEY";
+
+const String CACHE_SHIPPING_ADDRESS = "CACHE_SHIPPING_ADDRESS";
