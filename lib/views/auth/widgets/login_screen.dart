@@ -40,11 +40,18 @@ class LoginScreen extends GetWidget<LoginController> {
             ),
           ),
           SizedBox(height: 20),
-          CustomButton(
-            onTap: () async {
-              controller.login();
+          GetBuilder<LoginController>(
+            builder: (controller) {
+              return CustomButton(
+                onTap: controller.isLoading
+                    ? null
+                    : () async {
+                        controller.login();
+                      },
+                text: "LOG IN",
+                buttonColor: controller.isLoading ? Colors.brown : AppColor.primaryColor,
+              );
             },
-            text: "LOG IN",
           ),
           SizedBox(height: 40),
           Padding(

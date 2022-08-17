@@ -19,12 +19,11 @@ class LoginController extends GetxController {
   bool isLoading = false;
 
   Future<void> login() async {
-    isLoading = true;
-    update();
+    if (!formKey.currentState!.validate()) return;
 
     try {
-      if (!formKey.currentState!.validate()) return;
-
+      isLoading = true;
+      update();
       UserCredential userCredential =
           await AuthService.instance.login(email: email.text, password: password.text);
 

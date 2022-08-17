@@ -43,11 +43,18 @@ class RegisterScreen extends GetWidget<RegisterController> {
             ),
           ),
           SizedBox(height: 20),
-          CustomButton(
-            onTap: () async {
-              controller.createAccount();
+          GetBuilder<RegisterController>(
+            builder: (controller) {
+              return CustomButton(
+                onTap: controller.isLoading
+                    ? null
+                    : () async {
+                        controller.createAccount();
+                      },
+                text: "SIGN UP",
+                buttonColor: controller.isLoading ? Colors.brown : AppColor.primaryColor,
+              );
             },
-            text: "SIGN UP",
           ),
           SizedBox(height: 40),
           Padding(

@@ -13,11 +13,10 @@ class AuthLayoutScreen extends GetWidget<AuthLayoutController> {
       child: Scaffold(
         body: GetBuilder<AuthLayoutController>(
           builder: (_) {
-            return Container(
-              width: Get.width,
-              height: Get.height,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: SingleChildScrollView(
+            return SingleChildScrollView(
+              child: Container(
+                width: Get.width,
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -35,12 +34,13 @@ class AuthLayoutScreen extends GetWidget<AuthLayoutController> {
                                   controller.onChange(index);
                                 },
                                 child: CustomText(
-                                  text: controller.items[index].text,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
-                                  textAlign: TextAlign.start,
-                                  color: controller.index == index ? AppColor.fontColor : AppColor.fontGrayColor
-                                ),
+                                    text: controller.items[index].text,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    textAlign: TextAlign.start,
+                                    color: controller.index == index
+                                        ? AppColor.fontColor
+                                        : AppColor.fontGrayColor),
                               ),
                               if (index < controller.items.length - 1) SizedBox(width: 20),
                             ],
@@ -50,6 +50,7 @@ class AuthLayoutScreen extends GetWidget<AuthLayoutController> {
                     ),
                     SizedBox(height: 50),
                     controller.chooseScreen(),
+                    SizedBox(height: 50),
                   ],
                 ),
               ),

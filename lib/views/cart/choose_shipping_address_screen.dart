@@ -32,7 +32,7 @@ class ChooseShippingAddressScreen extends GetWidget<ChooseShippingAddressControl
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: Get.height * 0.16,
+                height: Get.height * 0.14,
               ),
               CustomCard(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
