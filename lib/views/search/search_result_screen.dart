@@ -56,7 +56,10 @@ class SearchResultScreen extends GetWidget<SearchResultController> {
       body: GetBuilder<SearchResultController>(
         builder: (controller) {
           if (controller.isLoading) return Center(child: CircularProgressIndicator());
-          if (controller.productsOfSearch.isEmpty) return EmptyScreen();
+          if (controller.productsOfSearch.isEmpty)
+            return EmptyScreen(
+              message: "Not found any item",
+            );
           return GridView.builder(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

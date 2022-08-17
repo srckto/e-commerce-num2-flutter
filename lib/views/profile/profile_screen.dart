@@ -38,6 +38,8 @@ class ProfileScreen extends GetWidget<ProfileController> {
                         text: MainUser.model!.username!,
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
+                        textAlign: TextAlign.start,
+                        maxLines: 1,
                       ),
                       SizedBox(height: 5),
                       CustomText(
