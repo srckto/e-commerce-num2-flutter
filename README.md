@@ -1,4 +1,14 @@
-# e_commerce_num2
+# E-Commerce Num2
+
+##  Features
+Firebase has been used as a database for this app.
+- Authentication < Login, Register , Rest password >
+- Search for items, categories.
+- Catch storage <Get_it> to save user data and what the user recently viewed.
+- Update user data.
+- Sqflite to save cart items.
+- Cloud Firestore ( Save user data, orders, products)
+- Dynamic Links.
 
 ### Screenshots.
 
