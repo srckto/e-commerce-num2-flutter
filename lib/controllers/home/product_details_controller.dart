@@ -1,8 +1,11 @@
+import 'dart:developer';
 
 import 'package:e_commerce_num2/controllers/cart/cart_controller.dart';
+import 'package:e_commerce_num2/helpers/dynamic_links_service.dart';
 import 'package:e_commerce_num2/models/cart_model.dart';
 import 'package:e_commerce_num2/models/product_model.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProductDetailsController extends GetxController {
   int indexOfInfo = 0;
@@ -25,7 +28,6 @@ class ProductDetailsController extends GetxController {
     update();
   }
 
-  
   Future<void> addToCart(ProductModel model) async {
     await Get.find<CartController>().addToCart(
       CartModel(
@@ -39,5 +41,18 @@ class ProductDetailsController extends GetxController {
         size: model.sizes![indexOfSize],
       ),
     );
+  }
+
+  Future<void> shareLink(ProductModel model) async {
+    try {
+      String path = await DynamicLinksService.createDynamicLink(model);
+      print("///////////////////////////////////////////////////////////");
+      log(path);
+      print("///////////////////////////////////////////////////////////");
+      await Share.share(path);
+    } catch (e) {
+      print(e.toString());
+      throw e;
+    }
   }
 }

@@ -84,7 +84,7 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsController> {
                   Expanded(
                     child: CustomButton(
                       onTap: () {
-                        print("SHARE THIS");
+                        controller.shareLink(model);
                       },
                       text: "SHARE THIS",
                       height: 50,
@@ -281,7 +281,6 @@ class ProductDetailsScreen extends GetWidget<ProductDetailsController> {
       ],
     );
   }
-
 
   Widget _contentOfReviews() {
     if (model.reviews == null) return Center(child: CustomText(text: "Reviews"));

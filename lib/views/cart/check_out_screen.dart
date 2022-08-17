@@ -112,6 +112,7 @@ class CheckoutScreen extends GetWidget<CheckoutController> {
               color: AppColor.fontGrayColor,
               fontSize: 12,
             ),
+            SizedBox(height: 8),
             Expanded(
               child: GetBuilder<CheckoutController>(
                 builder: (controller) {

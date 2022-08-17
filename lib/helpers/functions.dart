@@ -16,6 +16,10 @@ String? usernameValidator(String? value) {
   if (value == null || value.isEmpty) return _emptyString + "Please enter your username";
   if (value.trim().isEmpty) return _emptyString + "Please enter your username";
   if (value.length < 5) return _emptyString + "username is too short!";
+  // for (var i = 0; i < value.length; i++) {
+  //   bool found = value[i].contains(new RegExp(r'[0-9]'));
+  //   if (found) return _emptyString + "Please enter your name with out any number";
+  // }
   return null;
 }
 
@@ -33,4 +37,3 @@ String? phoneNumberValidator(String? value) {
   if (value.trim().length < 6) return _emptyString + "Please enter valid number";
   return null;
 }
-

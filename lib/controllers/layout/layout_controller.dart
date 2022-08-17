@@ -1,3 +1,4 @@
+import 'package:e_commerce_num2/helpers/dynamic_links_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +25,7 @@ class LayoutController extends GetxController {
   late int index;
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     index = 0;
     items = [
@@ -34,6 +35,7 @@ class LayoutController extends GetxController {
       _LayoutItem(name: "Profile", screen: ProfileScreen(), iconPath: "assets/images/Profile.svg"),
       _LayoutItem(name: "More", screen: MoreScreen(), iconPath: "assets/images/More.svg"),
     ];
+    await DynamicLinksService.initDynamicLinks();
   }
 
   void onChange(int newIndex) {
