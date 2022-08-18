@@ -14,10 +14,6 @@ void main() async {
   await GetStorage.init();
   await Firebase.initializeApp();
   await CartDbHelper.open();
-  // await DynamicLinksService.initDynamicLinks();
-
-  // await CartDbHelper.deleteCartTable();
-  // await CacheStorage.erase();
   MainUser.getOrUpdateUserFromCache();
   MainUser.getUserFromFirestoreAndUpdateModel();
   runApp(const MyApp());
